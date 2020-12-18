@@ -47,7 +47,7 @@ class Airplane {
   this.age = age;
   this.stomach = [];
 }
-eat(){
+eat(edible){
   if (this.stomach.length < 10){
     return this.stomach.push(edible);
   }
@@ -81,7 +81,7 @@ toString(){
       this.tank = 0;
       this.odometer = 0;
     }
-    fill(){
+    fill(gallons){
       this.tank = this.tank + gallons;
   }
    drive(distance){
@@ -135,7 +135,19 @@ toString(){
           + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
           + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
   */
- class Instructor {
+ class Instructor extends Lambdasian{
+       constructor(obj){
+        super(obj);
+        this.specialty = obj.specialty;
+        this.favLanguage = obj.favLanguage;
+        this.catchPhrase = obj.catchPhrase;
+       }
+       demo(subject){
+        return `Today we are learning about ${this.subject}.`
+       }
+       grade(student,subject){
+         return `${student.name}receives a perfect score on ${this.subject}.`
+       }
 
  }
   /*
